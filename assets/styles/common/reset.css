@@ -1,0 +1,116 @@
+:root,
+:root.dark {
+  --mainpurple: #5b37eb;
+  --maincyan: rgba(55, 235, 169, 0.85);
+  --bgcolor: #262626;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+.container {
+  width: 100%;
+  max-width: 1760px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+.circle {
+  height: 24px;
+  width: 24px;
+  border-radius: 24px;
+  background-color: black;
+  border: 0.5px solid white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99999998;
+}
+/* Comment by Dev. Change after creating HTML Structure */
+body {
+  font-family: "Helvetica-thin";
+}
+.welcome {
+  width: 100%;
+  height: 100dvh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  color: #fff;
+  z-index: 99999999;
+  transition: 1s;
+}
+.welcome-text {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+.welcomeSpan {
+  position: relative;
+  display: inline-block;
+  padding: 0 8px;
+  bottom: -20px;
+  opacity: 0;
+}
+
+.welcome-title {
+  letter-spacing: 3px;
+  font-size: 52px;
+  span:nth-child(1) {
+    font-family: "Helvetica Now Display";
+    font-weight: 700;
+  }
+  span:nth-child(2) {
+    font-family: "Helvetica Now Display";
+    font-weight: 300;
+  }
+}
+.welcome-subtitle {
+  font-family: "Helvetica Now Display";
+  color: #e3e3e3a0;
+  font-weight: 300;
+}
+.welcomeSpan.active {
+  bottom: 0;
+  opacity: 1;
+  transition: all ease-in-out 0.8s;
+}
+.welcomeSpan.fade {
+  bottom: 150px;
+  opacity: 0;
+  transition: all ease-in-out 0.8s;
+}
+.bodyGradient {
+  background: linear-gradient(#000000, #180e41);
+  position: fixed;
+  inset: 0;
+  display: flex;
+  place-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: -1;
+  background-color: hsla(0, 0%, 0%, 1);
+  background-image: radial-gradient(
+      at 0% 0%,
+      hsla(178, 97%, 44%, 0.24) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 84% 0%, hsla(168, 53%, 37%, 0.24) 0px, transparent 50%),
+    radial-gradient(at 26% 98%, hsla(266, 100%, 50%, 0.23) 0px, transparent 50%),
+    radial-gradient(at 74% 81%, hsla(240, 100%, 64%, 0.23) 0px, transparent 50%);
+}
