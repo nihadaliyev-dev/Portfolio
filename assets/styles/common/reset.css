@@ -11,6 +11,10 @@
   list-style: none;
   text-decoration: none;
 }
+*::selection {
+  background-color: #fbfbfb;
+  color: #212121;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -18,7 +22,7 @@ html {
   width: 100%;
   max-width: 1760px;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 4dvw;
 }
 .circle {
   height: 24px;

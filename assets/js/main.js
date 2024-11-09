@@ -114,3 +114,27 @@ const observer = new IntersectionObserver(
 
 // Hər bir section-u izləmək üçün observer-i əlavə edirik
 sections.forEach((section) => observer.observe(section));
+
+// HTML səhifəsi yüklənəndə kodu icra edirik
+document.addEventListener("DOMContentLoaded", () => {
+  const timelineItems = document.querySelectorAll(".timeline_item");
+
+  // Intersection Observer yaradırıq
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Element görünəndə `visible` sinifini əlavə edirik
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target); // Birdəfəlik müşahidə
+        }
+      });
+    },
+    {
+      threshold: 0.5, // 50%-i görünəndə aktiv olur
+    }
+  );
+
+  // Hər bir `timeline_item`-ı müşahidəyə əlavə edirik
+  timelineItems.forEach((item) => observer.observe(item));
+});
