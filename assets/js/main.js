@@ -21,7 +21,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }, introTextSpan.length * 400 + 800); // Müddəti animasiya uzunluğuna görə tənzimlədik
 
     setTimeout(() => {
-      intro.style.top = "-100vh";
+      intro.style.top = "-150vh";
       body.style.overflow = "auto";
     }, introTextSpan.length * 400 + 1600); // Son animasiya üçün vaxt
   }, 100); // İlk gecikmə
