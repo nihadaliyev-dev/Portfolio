@@ -34,29 +34,56 @@ backtotopBtn.addEventListener("click", () => {
 
 const coords = { x: 0, y: 0 };
 const circles = document.querySelectorAll(".circle");
-
-const colors = [
-  "#8400ff",
-  "#6d00ff",
-  "#5600ff",
-  "#4000ff",
-  "#2900ff",
-  "#1400ff",
-  "#0005ff",
-  "#0024ff",
-  "#0033ff",
-  "#0048ff",
-  "#0060ff",
-  "#0077ff",
-  "#008eff",
-  "#00a5ff",
-  "#00bbff",
-  "#00d2ff",
-  "#00e9ff",
-  "#00ffd3",
-  "#00ffba",
-  "#00ff8c",
-];
+let colors = [];
+if (localStorage.getItem("lightmode") === "active") {
+  colors = [
+    "#ffb56b",
+    "#fdaf69",
+    "#f89d63",
+    "#f59761",
+    "#ef865e",
+    "#ec805d",
+    "#e36e5c",
+    "#df685c",
+    "#d5585c",
+    "#d1525c",
+    "#c5415d",
+    "#c03b5d",
+    "#b22c5e",
+    "#ac265e",
+    "#9c155f",
+    "#950f5f",
+    "#830060",
+    "#7c0060",
+    "#680060",
+    "#60005f",
+    "#48005f",
+    "#3d005e",
+  ];
+} else {
+  colors = [
+    "#8400ff",
+    "#6d00ff",
+    "#5600ff",
+    "#4000ff",
+    "#2900ff",
+    "#1400ff",
+    "#0005ff",
+    "#0024ff",
+    "#0033ff",
+    "#0048ff",
+    "#0060ff",
+    "#0077ff",
+    "#008eff",
+    "#00a5ff",
+    "#00bbff",
+    "#00d2ff",
+    "#00e9ff",
+    "#00ffd3",
+    "#00ffba",
+    "#00ff8c",
+  ];
+}
 
 circles.forEach(function (circle, index) {
   circle.x = 0;

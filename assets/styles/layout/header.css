@@ -1,7 +1,10 @@
 .navTab {
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(15px);
+  display: flex;
+  align-items: center;
   position: fixed;
+  max-height: min-content;
   bottom: 24px;
   left: 50%;
   transform: translate(-50%, 0%);
@@ -18,18 +21,48 @@
 .navTab__list {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 10px;
   border-radius: 20px;
 }
 .navTab__list-item-link {
   border-radius: 20px;
   padding: 10px 20px;
-  color: #fff;
+  color: var(--navLink);
   font-size: 18px;
   outline: none;
   border: none;
   font-weight: 500;
   transition: all ease-in-out 400ms;
+}
+.themeBtnMain {
+  padding: 0;
+  margin: 0;
+}
+.navTab__list-item-button {
+  padding: 0;
+  font-size: 14px;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  background-color: var(--base-variant);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: var(--primary-color);
+  }
+}
+.navTab__list-item-button svg:last-child {
+  display: none;
+}
+.lightmode .navTab__list-item-button > svg:first-child {
+  display: none;
+}
+.lightmode .navTab__list-item-button > svg:last-child {
+  display: block;
 }
 .navTab__list-item-link.nav-active {
   background-color: var(--mainpurple);

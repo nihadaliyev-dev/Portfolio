@@ -6,12 +6,24 @@
   --gray: #212121;
   --whitesolid: #f1f1f1;
   --whitesolidfb: #fbfbfb;
+  --black: black;
+  --white: white;
+  --primary-color: #f1f1f1;
+  --navLink: #fff;
+  --fS-h4: #f1f1f1;
+  --fS-h4-light-1: #00ffb7;
+  --fS-h4-light-2: #6f09f5;
+
+  --primary-desc: #e3e3e3;
 }
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  list-style: none;
+  list-style: none !important;
+  text-decoration: none !important;
+}
+a {
   text-decoration: none;
 }
 *::selection {
@@ -31,8 +43,8 @@ html {
   height: 24px;
   width: 24px;
   border-radius: 24px;
-  background-color: black;
-  border: 0.5px solid white;
+  background-color: var(--black);
+  border: 0.5px solid var(--white);
   position: fixed;
   top: 0;
   left: 0;
@@ -52,8 +64,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black;
-  color: white;
+  background-color: var(--black);
+  color: var(--white);
   z-index: 99999999;
   transition: 1s;
 }
@@ -68,7 +80,7 @@ body {
   text-align: center;
 }
 .welcomeSpan {
-  color: white;
+  color: var(--white);
   z-index: 50;
   position: relative;
   display: inline-block;
@@ -91,7 +103,7 @@ body {
 }
 .welcome-subtitle {
   font-family: "Helvetica Now Display";
-  color: #e3e3e3a0;
+  color: var(--welcomesubtitle);
   font-weight: 300;
 }
 .welcomeSpan.active {
@@ -106,7 +118,7 @@ body {
   transition: all ease-in-out 0.8s;
 }
 .bodyGradient {
-  background: linear-gradient(#000000, #180e41);
+  transition: all ease-in-out 400ms;
   position: fixed;
   inset: 0;
   display: flex;
