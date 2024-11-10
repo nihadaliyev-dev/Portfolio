@@ -3,6 +3,9 @@
   --mainpurple: #5b37eb;
   --maincyan: rgba(55, 235, 169, 0.85);
   --bgcolor: #262626;
+  --gray: #212121;
+  --whitesolid: #f1f1f1;
+  --whitesolidfb: #fbfbfb;
 }
 * {
   box-sizing: border-box;
@@ -12,8 +15,8 @@
   text-decoration: none;
 }
 *::selection {
-  background-color: #fbfbfb;
-  color: #212121;
+  background-color: var(--whitesolidfb);
+  color: var(--gray);
 }
 html {
   scroll-behavior: smooth;
@@ -49,8 +52,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #000000;
-  color: #fff;
+  background-color: black;
+  color: white;
   z-index: 99999999;
   transition: 1s;
 }
@@ -65,6 +68,8 @@ body {
   text-align: center;
 }
 .welcomeSpan {
+  color: white;
+  z-index: 50;
   position: relative;
   display: inline-block;
   padding: 0 8px;
@@ -93,6 +98,7 @@ body {
   bottom: 0;
   opacity: 1;
   transition: all ease-in-out 0.8s;
+  z-index: 50;
 }
 .welcomeSpan.fade {
   bottom: 150px;

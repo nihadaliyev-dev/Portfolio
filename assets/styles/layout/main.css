@@ -22,6 +22,24 @@
     letter-spacing: 4px;
     color: #f1f1f1;
     line-height: 70px;
+    span {
+      animation: lighting 1500ms alternate infinite ease;
+    }
+    span:nth-child(1) {
+      animation-delay: 0ms;
+    }
+    span:nth-child(2) {
+      animation-delay: 250ms;
+    }
+    span:nth-child(3) {
+      animation-delay: 500ms;
+    }
+    span:nth-child(4) {
+      animation-delay: 750ms;
+    }
+    span:nth-child(5) {
+      animation-delay: 1000ms;
+    }
   }
   p {
     font-size: 18px;
@@ -81,7 +99,13 @@
   justify-content: center;
   align-items: center;
   img {
-    width: 20vh;
+    width: 30vw;
+    border: 2px solid #f1f1f1;
+    filter: grayscale(100%) blur(0.8px);
+    transition: all ease-in-out 400ms;
+  }
+  img:hover {
+    filter: grayscale(0%) blur(0px);
   }
 }
 .firstSection__advantages {
@@ -117,12 +141,23 @@
     }
   }
 }
+@keyframes lighting {
+  0%,
+  85% {
+    color: #f1f1f1;
+    text-shadow: none;
+  }
+  100% {
+    color: #00ffb7;
+    text-shadow: 0 0 5px #00ffb7, 0 0 3px #6f09f5;
+  }
+}
 
 .secondSection {
   padding: 120px 50px;
   display: flex;
   position: relative;
-  gap: 40px;
+  gap: 64px;
   width: 100%;
   height: 100dvh;
   justify-content: space-between;
@@ -134,21 +169,29 @@
     width: 500px;
     height: 100%;
     object-fit: cover;
+    border: 2px solid #f1f1f1;
+    transition: all ease-in-out 400ms;
+  }
+  img:hover {
+    border: 2px solid #00ffb7;
   }
 }
 .secondSection__content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 30px;
+  gap: 6px;
   h4 {
-    font-size: 54px;
+    font-size: 92px;
     color: #00ffb7;
     font-family: "Orbitron", sans-serif;
     font-weight: 700;
   }
   p {
-    font-size: 32px;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    font-size: 24px;
     width: 95%;
     color: #f1f1f1;
     font-weight: 600;
@@ -157,7 +200,7 @@
 }
 
 .thirdSection {
-  padding: 120px 50px;
+  padding: 60px 50px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -169,7 +212,7 @@
 }
 .thirdSection__content {
   h4 {
-    font-size: 52px;
+    font-size: 64px;
     color: #00ffb7;
     font-family: "Orbitron", sans-serif;
     font-weight: 700;
@@ -207,7 +250,7 @@
   flex-direction: column;
   justify-content: space-between;
   gap: 60px;
-  padding: 120px 0;
+  padding: 60px 0;
   h4 {
     font-size: 64px;
     font-family: "Orbitron", sans-serif;
@@ -295,7 +338,8 @@
     }
     input[type="submit"]:hover {
       background-color: #000000;
-      letter-spacing: 2px;
+      border: 2px solid #00ffb7;
+      color: #00ffb7;
     }
   }
   button {
@@ -313,7 +357,8 @@
   }
   button:hover {
     background-color: #000000;
-    letter-spacing: 2px;
+    border: 2px solid #00ffb7;
+    color: #00ffb7;
   }
 }
 
@@ -325,16 +370,17 @@
 }
 
 .fifthSection {
-  padding: 120px 0;
+  padding: 96px 0 250px 0;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
 }
 .fifthSection__timeline {
   display: flex;
   flex-direction: column;
   width: max-content;
+  gap: 40px;
   h4 {
     font-size: 64px;
     font-family: "Orbitron", sans-serif;
@@ -353,15 +399,15 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 40px;
+  gap: 96px;
+  width: 100%;
   li {
     position: relative;
     opacity: 0;
     transform: translateY(100px);
-    transition: opacity 2s ease-in, transform 2s ease-in;
+    transition: opacity 2s ease-in, transform 800ms ease-in;
     background-color: rgba(255, 255, 255, 0.4);
-    width: 40vw;
-    height: 20vh;
+    max-width: 100%;
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
     border-radius: 16px;
@@ -369,10 +415,6 @@
     padding: 20px;
     z-index: 0;
     border: 2px solid var(--maincyan);
-    .timeline-item.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
     span {
       color: #f2f2f2;
       font-size: 24px;
@@ -393,16 +435,187 @@
       letter-spacing: 0.5px;
     }
   }
-  li:not(:first-child)::after {
+  .timeline-item.visible {
+    opacity: 1;
+    transform: translateY(50px);
+  }
+  li:not(:last-child)::after {
     content: "";
     position: absolute;
-    top: -42px;
+    bottom: -98px;
     left: 50%;
     transform: translateX(-50%);
     width: 8px;
-    height: 42px;
+    height: 98px;
     background-color: #00ffb7;
     backdrop-filter: blur(15px);
     z-index: -1;
+    transition: all ease-in-out 800ms;
+  }
+}
+
+.fifthSection__skills {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 36px;
+  width: 100%;
+  h4 {
+    font-size: 64px;
+    font-family: "Orbitron", sans-serif;
+    font-weight: 700;
+    color: #00ffb7;
+  }
+}
+.fifthSection__skillsList {
+  width: 100%;
+}
+.fifthSection__skillsUl {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: #f1f1f1;
+  font-size: 32px;
+  gap: 26px;
+}
+.skills {
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  border: 2px solid transparent;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  width: 60%;
+  padding: 16px 26px;
+  border-radius: 16px;
+  transform: translateY(100px);
+  transition: opacity 2s ease-in, transform 800ms ease-in,
+    border ease-in-out 400ms;
+  p {
+    font-family: "Orbitron", sans-serif;
+    padding-right: 20px;
+    font-style: italic;
+    font-weight: 700;
+  }
+}
+.skills.visible {
+  opacity: 1;
+  transform: translateY(50px);
+}
+.skills:hover {
+  border: 2px solid #00ffb7;
+}
+.skillsBox {
+  width: 100%;
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  background: linear-gradient(45deg, #5b37eb31, rgba(55, 235, 169, 0.295));
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  height: 24px;
+  border-radius: 32px;
+}
+.skillsProg {
+  border: none;
+  height: 100%;
+  border-radius: 32px;
+  transition: all ease-in 4s;
+}
+.skillsProg1 {
+  /* HTML */
+  width: 100%;
+  background-size: 400% 400%;
+  background: linear-gradient(-45deg, #e34c26, #f06529);
+  animation: gradient 10s ease infinite;
+}
+.skillsProg2 {
+  /* CSS */
+  background: linear-gradient(-45deg, #264de4, #2965f1);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  width: 90%;
+}
+.skillsProg3 {
+  /* JS */
+  background: linear-gradient(-45deg, #d4b830, #fdd83c);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  width: 65%;
+}
+.skillsProg4 {
+  /* React */
+  background: linear-gradient(-45deg, #61dafb, #61dafb);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  width: 25%;
+}
+.skillsProg5 {
+  /* Node.js */
+  background: linear-gradient(-45deg, #80bd00, #448a43);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  width: 30%;
+}
+.skillsProg6 {
+  /* SQL */
+  background: linear-gradient(-45deg, #2687cf, #b8d432);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  width: 90%;
+}
+.skillsProg7 {
+  /* C# */
+  background: linear-gradient(-45deg, #68217a, #953dac);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  width: 60%;
+}
+.skillsProg8 {
+  /* C++ */
+  background: linear-gradient(-45deg, #084a86, #699dd3);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  width: 75%;
+}
+.skillsProg9 {
+  /* Python */
+  background: linear-gradient(-45deg, #386f9c, #ffe671);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  width: 60%;
+}
+.skillsProg10 {
+  /* Java */
+  background: linear-gradient(-45deg, #ca3132, #3174b9);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  width: 65%;
+}
+.skillsProg11 {
+  /* Bootstrap */
+  background: linear-gradient(-45deg, #8c0bfd, #6f09f5);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  width: 80%;
+}
+.skillsProg12 {
+  /* Tailwind CSS*/
+  background: linear-gradient(-45deg, #1ea3bc, #12c9b7);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  width: 85%;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }

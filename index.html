@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="./assets/styles/layout/footer.css" />
     <!-- End of Local CSS -->
   </head>
-  <body>
+  <body id="body">
     <!-- Custom Cursor -->
     <div class="cursorBg">
       <div class="circle"></div>
@@ -56,7 +56,7 @@
     <!-- End of Custom Cursor -->
 
     <!-- Welcome Section -->
-    <div style="display: none" class="welcome">
+    <div class="welcome">
       <div class="welcome-text">
         <h1 class="welcome-title">
           <span class="welcomeSpan">Hello, </span
@@ -97,7 +97,10 @@
         <div class="container">
           <div class="firstSection">
             <div class="firstSection__content">
-              <h4>Nihad Aliyev is Right Here!</h4>
+              <h4>
+                <span>Nihad</span> <span>Aliyev </span><span>is </span
+                ><span>Right </span><span>Here!</span>
+              </h4>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat
                 aut neque praesentium atque, veniam voluptate corrupti hic
@@ -120,7 +123,7 @@
             </div>
 
             <div class="firstSection__img">
-              <img src="./assets/images/artist.png3" alt="me" />
+              <img src="./assets/images/me_2.jpeg" alt="me" />
             </div>
 
             <div class="firstSection__advantages">
@@ -164,7 +167,7 @@
         <div class="container">
           <div class="secondSection">
             <div class="secondSection__img">
-              <img src="./assets/images/artist.png" alt="me_2" />
+              <img src="./assets/images/me.png" alt="me_2" />
             </div>
             <div class="secondSection__content">
               <h4>Who is Nihad Aliyev?</h4>
@@ -325,33 +328,35 @@
               <div class="timeline__main">
                 <ul class="timeline__ul timeline_ul">
                   <li class="timeline-item">
-                    <span>2021</span>
-                    <h5>Header of checkpoint</h5>
-                    <p>Started learning frontend development</p>
+                    <span>2015</span>
+                    <h5>Started Working With Computer</h5>
+                    <p>Started learning programming</p>
                   </li>
                   <li class="timeline-item">
-                    <span>2022</span>
-                    <h5>Header of checkpoint</h5>
-                    <p>Joined CodeAcademy Baku</p>
+                    <span>2019</span>
+                    <h5>Learning Front-end development</h5>
+                    <p>Started learning basic frontend development</p>
                   </li>
                   <li class="timeline-item">
-                    <span>2022</span>
-                    <h5>Header of checkpoint</h5>
-                    <p>Finished CodeAcademy Baku</p>
-                  </li>
-                  <li class="timeline-item">
-                    <span>2022</span>
-                    <h5>Header of checkpoint</h5>
-                    <p>Started working as a frontend developer</p>
+                    <span>2020</span>
+                    <h5>Learning Back-end development</h5>
+                    <p>Started learning basic backend development</p>
                   </li>
                   <li class="timeline-item">
                     <span>2021</span>
-                    <h5>Header of checkpoint</h5>
-                    <p>Started learning frontend development</p>
+                    <h5>Mastering Front-end development</h5>
+                    <p>
+                      Mastered Front end development with frameworks and etc.
+                    </p>
                   </li>
                   <li class="timeline-item">
-                    <span>2021</span>
-                    <h5>Header of checkpoint</h5>
+                    <span>2022</span>
+                    <h5>Started to build algorithms</h5>
+                    <p>Started write algorithms in</p>
+                  </li>
+                  <li class="timeline-item">
+                    <span>2024</span>
+                    <h5>Learning advanced Front-end in CodeAcedemy</h5>
                     <p>Started learning frontend development</p>
                   </li>
                 </ul>
@@ -360,13 +365,81 @@
             <div class="fifthSection__skills">
               <h4>Skills</h4>
               <div class="fifthSection__skillsList">
-                <ul>
-                  <li>HTML</li>
-                  <li>CSS</li>
-                  <li>JS</li>
-                  <li>React</li>
-                  <li>Node.js</li>
-                  <li>Express</li>
+                <ul class="fifthSection__skillsUl">
+                  <li class="skills">
+                    <p>HTML</p>
+                    <div class="skillsBox">
+                      <div class="skillsProg skillsProg1"></div>
+                    </div>
+                  </li>
+                  <li class="skills">
+                    <p>CSS</p>
+                    <div class="skillsBox">
+                      <div class="skillsProg skillsProg2"></div>
+                    </div>
+                  </li>
+                  <li class="skills">
+                    <p>JavaScript</p>
+                    <div class="skillsBox">
+                      <div class="skillsProg skillsProg3"></div>
+                    </div>
+                  </li>
+                  <li class="skills">
+                    <p>React</p>
+                    <div class="skillsBox">
+                      <div class="skillsProg skillsProg4"></div>
+                    </div>
+                  </li>
+                  <li class="skills">
+                    <p>Node.js</p>
+                    <div class="skillsBox">
+                      <div class="skillsProg skillsProg5"></div>
+                    </div>
+                  </li>
+                  <li class="skills">
+                    <p>SQL</p>
+                    <div class="skillsBox">
+                      <div class="skillsProg skillsProg6"></div>
+                    </div>
+                  </li>
+                  <li class="skills">
+                    <p>C#</p>
+                    <div class="skillsBox">
+                      <div class="skillsProg skillsProg7"></div>
+                    </div>
+                  </li>
+                  <li class="skills">
+                    <p>C/C++</p>
+                    <div class="skillsBox">
+                      <div class="skillsProg skillsProg8"></div>
+                    </div>
+                  </li>
+                  <li class="skills">
+                    <p>Python</p>
+                    <div class="skillsBox">
+                      <div class="skillsProg skillsProg9"></div>
+                    </div>
+                  </li>
+                  <li class="skills">
+                    <p>Java</p>
+                    <div class="skillsBox">
+                      <div class="skillsProg skillsProg10"></div>
+                    </div>
+                  </li>
+                  <li class="skills">
+                    <p>Bootstrap</p>
+                    <div class="skillsBox">
+                      <div class="skillsProg skillsProg11"></div>
+                    </div>
+                  </li>
+                  <li class="skills">
+                    <p>TailwindCSS</p>
+                    <div class="skillsBox">
+                      <div class="skillsProg skillsProg12"></div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -375,7 +448,45 @@
     <!-- Main end -->
 
     <!-- Footer start -->
-    <footer></footer>
+    <footer>
+      <div class="container">
+        <div class="footerMain">
+          <div class="footer__head">
+            <div>Nihad Aliyev - 2024</div>
+            <button id="footer__backtotop">
+              <p>BACK TO TOP</p>
+              <img src="./assets/images/icons/round_up.svg" alt="Go up" />
+            </button>
+          </div>
+          <div class="footer__body">
+            <p>HAVE A PROJECT IN MIND?</p>
+            <p>LET'S TALK</p>
+          </div>
+          <div class="footer__footer">
+            <a
+              class="footer__footer-link"
+              target="_blank"
+              href="https://github.com/nihadaliyev-dev"
+              >GITHUB</a
+            ><a
+              class="footer__footer-link"
+              target="_blank"
+              href="https://www.linkedin.com/in/nihad-aliyev-dev/"
+              >LINKEDIN</a
+            ><a
+              class="footer__footer-link"
+              href="mailto:nihadaliyev.530@gmail.com"
+              >EMAIL</a
+            ><a
+              class="footer__footer-link"
+              target="_blank"
+              href="https://www.instagram.com/nogface/"
+              >INSTAGRAM</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
     <!-- Footer end -->
 
     <script type="module" src="./assets/js/main.js"></script>

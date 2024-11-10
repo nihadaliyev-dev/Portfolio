@@ -1,28 +1,35 @@
 let intro = document.querySelector(".welcome");
-let introText = document.querySelector(".welcome-text");
 let introTextSpan = document.querySelectorAll(".welcomeSpan");
+let body = document.querySelector("body");
 
 window.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
     introTextSpan.forEach((span, index) => {
       setTimeout(() => {
         span.classList.add("active");
+        body.style.overflow = "hidden";
       }, (index + 1) * 400);
     });
 
     setTimeout(() => {
-      logoSpan.forEach((span, index) => {
+      introTextSpan.forEach((span, index) => {
         setTimeout(() => {
           span.classList.remove("active");
           span.classList.add("fade");
-        }, (index + 1) * 50);
+        }, index * 50);
       });
-    });
+    }, introTextSpan.length * 400 + 800); // Müddəti animasiya uzunluğuna görə tənzimlədik
 
     setTimeout(() => {
       intro.style.top = "-100vh";
-    }, 3200);
-  });
+      body.style.overflow = "auto";
+    }, introTextSpan.length * 400 + 1600); // Son animasiya üçün vaxt
+  }, 100); // İlk gecikmə
+});
+
+const backtotopBtn = document.getElementById("footer__backtotop");
+backtotopBtn.addEventListener("click", () => {
+  window.scrollTo(0, 0);
 });
 
 const coords = { x: 0, y: 0 };
@@ -85,11 +92,9 @@ function animateCircles() {
 
 animateCircles();
 
-// Bütün linkləri və section-ları seçirik
 const navLinks = document.querySelectorAll(".navTab__list-item-link");
 const sections = document.querySelectorAll("section");
 
-// Yeni Intersection Observer obyekti yaradılır
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -108,7 +113,7 @@ const observer = new IntersectionObserver(
     });
   },
   {
-    threshold: 0.5, // Section yarıdan çox görünəndə aktiv olur
+    threshold: 0.45, // Section yarıdan çox görünəndə aktiv olur
   }
 );
 
@@ -117,7 +122,7 @@ sections.forEach((section) => observer.observe(section));
 
 // HTML səhifəsi yüklənəndə kodu icra edirik
 document.addEventListener("DOMContentLoaded", () => {
-  const timelineItems = document.querySelectorAll(".timeline_item");
+  const timelineItems = document.querySelectorAll(".timeline-item");
 
   // Intersection Observer yaradırıq
   const observer = new IntersectionObserver(
@@ -131,10 +136,51 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     },
     {
-      threshold: 0.5, // 50%-i görünəndə aktiv olur
+      threshold: 0.8, // 50%-i görünəndə aktiv olur
     }
   );
 
   // Hər bir `timeline_item`-ı müşahidəyə əlavə edirik
   timelineItems.forEach((item) => observer.observe(item));
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const timelineItems = document.querySelectorAll(".skills");
+
+  // Intersection Observer yaradırıq
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Element görünəndə `visible` sinifini əlavə edirik
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target); // Birdəfəlik müşahidə
+        }
+      });
+    },
+    {
+      threshold: 0.8, // 50%-i görünəndə aktiv olur
+    }
+  );
+
+  // Hər bir `timeline_item`-ı müşahidəyə əlavə edirik
+  timelineItems.forEach((item) => observer.observe(item));
+});
+
+window.addEventListener("scroll", function () {
+  const fixedElement = document.querySelector(".navTab");
+  const footer = document.querySelector("footer");
+  const rect = footer.getBoundingClientRect();
+
+  if (rect.top <= window.innerHeight - 300) {
+    fixedElement.style.bottom = `${rect.height - 30}px`;
+  } else if (rect.top <= this.window.innerHeight - 200) {
+    fixedElement.style.bottom = `${rect.height - 130}px`;
+  } else if (rect.top <= this.window.innerHeight - 100) {
+    fixedElement.style.bottom = `${rect.height - 270}px`;
+  } else if (rect.top <= this.window.innerHeight) {
+    fixedElement.style.bottom = `${rect.height - 350}px`;
+  } else {
+    fixedElement.style.bottom = "24px";
+  }
 });
