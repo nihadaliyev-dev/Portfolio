@@ -668,6 +668,7 @@
 @media (min-width: 992px) and (max-width: 1199.98px) {
   .firstSection__main {
     flex-direction: column;
+    padding-right: 0;
   }
   /* TABLET */
   .welcome {
@@ -990,6 +991,7 @@
 @media (min-width: 768px) and (max-width: 991.98px) {
   .firstSection__main {
     flex-direction: column;
+    padding-right: 0;
   }
   /* TABLET */
 
@@ -1314,6 +1316,7 @@
 @media (min-width: 576px) and (max-width: 767.98px) {
   .firstSection__main {
     flex-direction: column;
+    padding-right: 0;
   } /* MOBILE */
   .welcome {
     height: 100%;
@@ -1635,6 +1638,7 @@
 @media only screen and (max-width: 575.98px) {
   .firstSection__main {
     flex-direction: column;
+    padding-right: 0;
   }
   /* MOBILE */
   .welcome {
