@@ -18,13 +18,13 @@ window.addEventListener("DOMContentLoaded", () => {
           span.classList.add("fade");
         }, index * 50);
       });
-    }, introTextSpan.length * 400 + 800); // Müddəti animasiya uzunluğuna görə tənzimlədik
+    }, introTextSpan.length * 400 + 800);
 
     setTimeout(() => {
       intro.style.top = "-150vh";
       body.style.overflow = "auto";
-    }, introTextSpan.length * 400 + 1600); // Son animasiya üçün vaxt
-  }, 100); // İlk gecikmə
+    }, introTextSpan.length * 400 + 1600);
+  }, 100);
 });
 
 const backtotopBtn = document.getElementById("footer__backtotop");
@@ -131,66 +131,55 @@ const observer = new IntersectionObserver(
           `.navTab__list-item-link[href="#${entry.target.id}"]`
         );
 
-        // Bütün linklərdən .nav-active sinifini silirik
         navLinks.forEach((link) => link.classList.remove("nav-active"));
 
-        // Görünən section-a uyğun linkə .nav-active sinifini əlavə edirik
         activeLink.classList.add("nav-active");
       }
     });
   },
   {
-    threshold: 0.45, // Section yarıdan çox görünəndə aktiv olur
+    threshold: 0.45,
   }
 );
 
-// Hər bir section-u izləmək üçün observer-i əlavə edirik
 sections.forEach((section) => observer.observe(section));
 
-// HTML səhifəsi yüklənəndə kodu icra edirik
 document.addEventListener("DOMContentLoaded", () => {
   const timelineItems = document.querySelectorAll(".timeline-item");
 
-  // Intersection Observer yaradırıq
   const observer = new IntersectionObserver(
     (entries, observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          // Element görünəndə `visible` sinifini əlavə edirik
           entry.target.classList.add("visible");
-          observer.unobserve(entry.target); // Birdəfəlik müşahidə
+          observer.unobserve(entry.target);
         }
       });
     },
     {
-      threshold: 0.8, // 50%-i görünəndə aktiv olur
+      threshold: 0.8,
     }
   );
 
-  // Hər bir `timeline_item`-ı müşahidəyə əlavə edirik
   timelineItems.forEach((item) => observer.observe(item));
 });
 
 document.addEventListener("DOMContentLoaded", () => {
   const timelineItems = document.querySelectorAll(".skills");
-
-  // Intersection Observer yaradırıq
   const observer = new IntersectionObserver(
     (entries, observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          // Element görünəndə `visible` sinifini əlavə edirik
           entry.target.classList.add("visible");
-          observer.unobserve(entry.target); // Birdəfəlik müşahidə
+          observer.unobserve(entry.target);
         }
       });
     },
     {
-      threshold: 0.8, // 50%-i görünəndə aktiv olur
+      threshold: 0.8,
     }
   );
 
-  // Hər bir `timeline_item`-ı müşahidəyə əlavə edirik
   timelineItems.forEach((item) => observer.observe(item));
 });
 
